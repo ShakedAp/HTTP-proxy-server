@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Proxy Sever Settings</h1>
+    </header>
+
+    <div class="settings_container" id="filter_settings">
+        <h2>Filters</h2>
+
+        <form name="filter_form" id="filter_form" action="/" method="post">
+                <section> 
+                    <label> URL Blacklist: </label>
+                    <input type="text" name="url_blacklist" id="url_blacklist" 
+                        value="{{ filter_input_data['url_blacklist'] }}">
+
+                    <label> URL Whitelist: </label>
+                    <input type="text" name="url_whitelist" id="url_whitelist"
+                        value="{{ filter_input_data['url_whitelist'] }}">
+                    
+                        
+                </section>
+
+                <section> 
+                    <label> IP Blacklist: </label>
+                    <input type="text" name="ip_blacklist" id="ip_blacklist" 
+                        value="{{ filter_input_data['ip_blacklist'] }}">
+
+                    <label> IP Whitelist: </label>
+                    <input type="text" name="ip_whitelist" id="ip_whitelist"
+                        value="{{ filter_input_data['ip_whitelist'] }}">
+
+                </section>
+
+                <input type="submit" name="send_filters" value="Send!">
+        </form>
+    </div>
+
+    <div class="settings_container" id="cache_settings">
+        <h2>Caching</h2>
+        
+        <form name="cache_form" action="/" method="post">
+
+            <section style=" align-items: center;">
+                <label>Allow caching:</label>
+                <input type="checkbox" name="allow_cache" id="allow_cache" checked>
+            </section>
+
+            
+            <section style="display: flex; justify-content: center;">
+                <label> Cache Time: </label>
+                <input type="range" name="cache_time" id="cache_time" 
+                min="1" max="600" value="{{caching_timer}}">
+                <section id="slider_output"></section>
+            </section>
+            
+            <section>
+                <input type="submit" name="send_caching" value="Send!">
+                <input type="submit" name="clear_cache"  id="clear_cache" value="Clear Cache">
+            </section>
+
+        </form>
+    </div>
+
+    <div class="settings_container" id="server_settings">
+        <h2>Server</h2>
+        
+        <form name="form1" action="/" method="post">
+            
+            <input type="submit" name="toggle_server" id="toggle_server" value="Toggle Server"
+                style="--bgclr: {{btn_color}};">
+        </form>
+
+
+    </div>
+
+
+    <footer> 
+        <p>Created By Shaked Apter</p>
+    </footer>
+</body>
+</html>
+
+<!--     
+    SERVER
+    close / open server
+    server status
+    log of the traffic (diff page)
+
+    FILTERS
+    url whitelist + blacklist
+    ip whitelist + blacklist
+    
+    CACHING
+    allow/disable caching
+    clear cach
+    set cache timer
+ -->
