@@ -1,6 +1,6 @@
 # HTTP-proxy-server
 
-Desc
+This is a simple HTTP proxy server implemented in Python using the standard library, along with a management website built using Flask. The proxy server allows clients to send HTTP requests through the server, which then forwards those requests to the intended destination server and sends back the response. The management website provides a user interface to monitor and control the proxy server.
 
 
 ## Features
