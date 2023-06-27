@@ -13,7 +13,7 @@ This is a simple HTTP proxy server implemented in Python using the standard libr
 ## Installation & Usage
 
 1. Clone the repository: ``` git clone https://github.com/ShakedAp/HTTP-proxy-server.git ```
-2. Install the flask library: ```pip install flask```
+2. Install the flask and diskcache libraries: ```pip install flask diskcache```
 3. In `shared_settings.py` change the following variables:
     * `FLASK_HOST` to the web app ip (recommended to be local ip)
     * `FLASK_PORT` to the web app port
